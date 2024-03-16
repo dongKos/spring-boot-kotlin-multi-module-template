@@ -5,7 +5,7 @@ import com.example.demo.user.dto.UserDto
 import org.springframework.stereotype.Service
 
 @Service
-class UserQueryService(
+class UserQueryFacade(
     private val userDomainQueryService: UserDomainQueryService,
 ) {
     fun getUser(userId: Long): UserDto? {
