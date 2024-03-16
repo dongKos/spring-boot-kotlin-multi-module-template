@@ -1,19 +1,17 @@
-rootProject.name = "demo"
+rootProject.name = "multi-demo"
 
 // api
 include("api:rest-api")
+include("api:query")
+include("api:command")
+include("api:signing")
 
 // domain
 include("domain:user")
-include("api:query")
-include("common")
-include("infrastructure")
+
+// infrastructure
 include("infrastructure:jpa")
-include("common:util")
-findProject(":common:util")?.name = "util"
-include("api:command")
-findProject(":api:command")?.name = "command"
 include("infrastructure:security")
-findProject(":infrastructure:security")?.name = "security"
-include("api:signing")
-findProject(":api:signing")?.name = "signing"
+
+// common
+include("common:util")
