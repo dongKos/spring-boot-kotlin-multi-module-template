@@ -12,7 +12,7 @@
             </layout>
         </appender>
     </springProfile>
-    <springProfile name="local, test, dev">
+    <springProfile name="local, test">
         <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
     </springProfile>
     <root level="info">
