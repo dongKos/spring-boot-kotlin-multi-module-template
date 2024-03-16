@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service
 class UserQueryFacade(
     private val userDomainQueryService: UserDomainQueryService,
 ) {
-    fun getUser(userId: Long): UserDto? {
+    fun getUser(userId: Long): UserDto {
         return userDomainQueryService.getUser(userId).let {
             UserDto(
                 id = it.id,
