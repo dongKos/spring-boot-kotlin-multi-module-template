@@ -10,10 +10,6 @@ dependencies {
 
     // common
     implementation(project(":common:util"))
-
-    // Logback
-    implementation("ch.qos.logback.contrib:logback-json-classic:0.1.5")
-    implementation("ch.qos.logback.contrib:logback-jackson:0.1.5")
 }
 
 tasks.bootJar {

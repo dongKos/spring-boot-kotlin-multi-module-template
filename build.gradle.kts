@@ -49,6 +49,14 @@ subprojects {
         implementation("org.jetbrains.kotlin:kotlin-reflect")
         implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
         implementation("org.springframework.boot:spring-boot-starter-test")
+
+        // Logback
+        implementation("ch.qos.logback.contrib:logback-json-classic:0.1.5")
+        implementation("ch.qos.logback.contrib:logback-jackson:0.1.5")
+
+        // open-api
+        implementation("org.springdoc:springdoc-openapi-ui:1.6.12")
+        implementation("org.springdoc:springdoc-openapi-kotlin:1.6.12")
     }
 }
 

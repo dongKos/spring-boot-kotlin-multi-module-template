@@ -4,6 +4,7 @@ import com.example.demo.signing.dto.LoginRequest
 import com.example.demo.signing.dto.LoginResponse
 import com.example.demo.signing.presentation.LoginController.Companion.LOGIN_PATH
 import com.example.demo.signing.service.SigningFacade
+import io.swagger.v3.oas.annotations.Operation
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Service
 import org.springframework.web.bind.annotation.PostMapping
@@ -22,6 +23,12 @@ class LoginController(
         const val LOGIN_PATH = "$API_PREFIX$VERSION_PREFIX$SERVICE_NAME"
     }
 
+    @Operation(
+        operationId = "LOGIN",
+        summary = "로그인",
+        tags = ["signing"],
+        description = "로그인",
+    )
     @PostMapping
     fun login(
         @RequestBody loginRequest: LoginRequest,

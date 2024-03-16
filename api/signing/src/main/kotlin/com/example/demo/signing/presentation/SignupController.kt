@@ -4,6 +4,7 @@ import com.example.demo.signing.dto.SignupCommand
 import com.example.demo.signing.dto.SignupResponse
 import com.example.demo.signing.presentation.SignupController.Companion.SIGNUP_PATH
 import com.example.demo.signing.service.SigningFacade
+import io.swagger.v3.oas.annotations.Operation
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
@@ -22,6 +23,12 @@ class SignupController(
         const val SIGNUP_PATH = "$API_PREFIX$VERSION_PREFIX$SERVICE_NAME"
     }
 
+    @Operation(
+        operationId = "SIGNUP",
+        summary = "회원가입",
+        tags = ["signing"],
+        description = "회원가입",
+    )
     @PostMapping
     fun signup(
         @RequestBody signupCommand: SignupCommand,
