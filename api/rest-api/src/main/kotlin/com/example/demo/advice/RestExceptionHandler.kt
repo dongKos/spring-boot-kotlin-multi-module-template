@@ -1,7 +1,7 @@
 package com.example.demo.advice
 
-import com.example.demo.exception.GeneralBadRequestException
 import com.example.demo.exception.ErrorResponse
+import com.example.demo.exception.GeneralBadRequestException
 import mu.KotlinLogging
 import org.springframework.http.HttpStatus.BAD_REQUEST
 import org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR
@@ -23,8 +23,8 @@ class RestExceptionHandler {
             ErrorResponse(
                 code = e.errorCode,
                 message = e.message,
-                data = null
-            )
+                data = null,
+            ),
         )
     }
 
@@ -35,8 +35,8 @@ class RestExceptionHandler {
         return ResponseEntity.status(INTERNAL_SERVER_ERROR).body(
             ErrorResponse(
                 message = e.message,
-                data = null
-            )
+                data = null,
+            ),
         )
     }
 }

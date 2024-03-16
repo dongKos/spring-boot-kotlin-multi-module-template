@@ -10,12 +10,15 @@ import org.springframework.transaction.annotation.Transactional
 class UserDomainCommandService(
     private val userRepository: UserRepository,
 ) {
-    fun createUser(name: String, age: Long): Long {
+    fun createUser(
+        name: String,
+        age: Long,
+    ): Long {
         return userRepository.save(
             User(
                 name = name,
                 age = age,
-            )
+            ),
         ).identifier
     }
 }

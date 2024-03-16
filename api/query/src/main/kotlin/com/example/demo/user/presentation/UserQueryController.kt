@@ -24,6 +24,5 @@ class UserQueryController(
     @GetMapping("/{userId}")
     fun getUser(
         @PathVariable userId: Long,
-    ): ResponseEntity<UserDto?>  =
-        ResponseEntity.ok(userQueryFacade.getUser(userId))
+    ): ResponseEntity<UserDto?> = ResponseEntity.ok(userQueryFacade.getUser(userId))
 }

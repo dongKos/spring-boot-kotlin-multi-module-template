@@ -1,17 +1,9 @@
 package com.example.demo.model
 
 import com.example.demo.persistence.CustomPersistable
-import com.example.demo.persistence.Identifiable
-import org.springframework.data.annotation.CreatedDate
-import org.springframework.data.annotation.LastModifiedDate
-import org.springframework.data.jpa.domain.support.AuditingEntityListener
-import java.time.Instant
-import javax.persistence.Column
 import javax.persistence.Entity
-import javax.persistence.EntityListeners
 import javax.persistence.GeneratedValue
 import javax.persistence.Id
-import javax.persistence.MappedSuperclass
 import javax.persistence.Table
 
 @Entity
@@ -19,7 +11,7 @@ import javax.persistence.Table
 class User(
     val name: String,
     val age: Long,
-): CustomPersistable<Long>() {
+) : CustomPersistable<Long>() {
     @Id @GeneratedValue
     override val id: Long? = null
 

@@ -5,12 +5,10 @@ import com.example.demo.user.dto.CreateUserResponse
 import com.example.demo.user.presentation.UserCommandController.Companion.USER_PATH
 import com.example.demo.user.service.UserCommandFacade
 import org.springframework.http.ResponseEntity
-import org.springframework.http.ResponseEntity.created
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
-import java.net.URI
 
 @RestController
 @RequestMapping(USER_PATH)
@@ -29,6 +27,6 @@ class UserCommandController(
         @RequestBody createUserCommand: CreateUserCommand,
     ): ResponseEntity<CreateUserResponse> =
         ResponseEntity.ok(
-            userCommandFacade.createUser(createUserCommand)
+            userCommandFacade.createUser(createUserCommand),
         )
 }
