@@ -1,3 +1,6 @@
+plugins {
+    id("org.jetbrains.kotlin.plugin.jpa")
+}
 dependencies {
     api("org.springframework.boot:spring-boot-starter-data-jpa")
     api("org.hibernate:hibernate-core:5.4.27.Final")

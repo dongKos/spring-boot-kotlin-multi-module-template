@@ -57,3 +57,7 @@ logging:
           core:
             JdbcTemplate: DEBUG
             StatementCreatorUtils: TRACE
+
+jwt:
+  secret: eMtFo[Sj^6@^!b_
+  access-expire-time: 1D

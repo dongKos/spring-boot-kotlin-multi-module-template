@@ -11,26 +11,20 @@ import javax.persistence.Table
 class User(
     val name: String,
     val age: Long,
+    val loginType: LoginType,
 ) : CustomPersistable<Long>() {
     @Id @GeneratedValue
     override val id: Long? = null
 
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other !is User) return false
+    val roles: String = "ROLE_USER"
 
-        if (name != other.name) return false
-        if (age != other.age) return false
-        if (id != other.id) return false
-
-        return true
+    fun getRoleList(): List<String> {
+        return listOf(*roles.split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray())
     }
 
-    override fun hashCode(): Int {
-        var result = name.hashCode()
-        result = 31 * result + age.hashCode()
-        result = 31 * result + (id?.hashCode() ?: 0)
-        return result
+    enum class LoginType {
+        PASSWORD,
+        GOOGLE,
     }
 
     override fun toString(): String {
