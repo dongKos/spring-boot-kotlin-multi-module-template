@@ -1,0 +1,59 @@
+server:
+  port: 8088
+
+spring:
+  application:
+    name: multi-demo
+  config:
+    activate:
+      on-profile: common
+  datasource:
+    hikari:
+      data-source-properties:
+        connection-timeout: 5000
+        socket-timeout: 300000
+        use-legacy-datetime-code: false
+        server-timezone: UTC
+        character-encoding: UTF-8
+        use-unicode: true
+        use-ssl: false
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+      use-new-id-generator-mappings: false
+    properties:
+      hibernate:
+        format_sql: true
+        order_inserts: true
+        order_updates: true
+        jdbc:
+          batch_size: 20000
+        default_batch_fetch_size: 50
+        query:
+          in_clause_parameter_padding: true
+      show-sql: false
+      database-platform: org.hibernate.dialect.MySQL8Dialect
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: true
+      WRITE_DATE_TIMESTAMPS_AS_NANOSECONDS: false
+    deserialization:
+      READ_DATE_TIMESTAMPS_AS_NANOSECONDS: false
+  flyway:
+    enabled: false
+logging:
+  level:
+    root: info
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+      springframework:
+        jdbc:
+          core:
+            JdbcTemplate: DEBUG
+            StatementCreatorUtils: TRACE
