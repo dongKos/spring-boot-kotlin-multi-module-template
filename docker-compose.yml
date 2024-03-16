@@ -1,0 +1,13 @@
+version: '3'
+services:
+  mysql-8:
+    image: 'mysql:8'
+    ports:
+      - '13308:3306'
+    environment:
+      MYSQL_DATABASE: multi_demo
+      MYSQL_ROOT_PASSWORD: root
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
