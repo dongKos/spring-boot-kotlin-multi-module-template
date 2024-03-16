@@ -1,12 +1,10 @@
 spring:
   config:
     activate:
-      on-profile: local
+      on-profile: prod
   datasource:
     url: jdbc:mysql://localhost:13306/multi_demo?serverTimeZone=Asia/Seoul&useLegacyDatetimeCode=false&characterEncoding=UTF-8
     username: root
     password: root
   flyway:
-    enabled: true
-    locations: classpath:db/migration
-    out-of-order: true
+    enabled: false

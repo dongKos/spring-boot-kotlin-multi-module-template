@@ -8,6 +8,7 @@ spring:
     activate:
       on-profile: common
   datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
     hikari:
       data-source-properties:
         connection-timeout: 5000
@@ -42,6 +43,7 @@ spring:
       READ_DATE_TIMESTAMPS_AS_NANOSECONDS: false
   flyway:
     enabled: false
+
 logging:
   level:
     root: info
@@ -57,6 +59,15 @@ logging:
           core:
             JdbcTemplate: DEBUG
             StatementCreatorUtils: TRACE
+
+springdoc:
+  api-docs:
+    path: /internal/api-docs
+  default-consumes-media-type: application/json
+  default-produces-media-type: application/json
+  swagger-ui:
+    path: /internal/swagger-ui.html
+    doc-expansion: none
 
 jwt:
   secret: eMtFo[Sj^6@^!b_

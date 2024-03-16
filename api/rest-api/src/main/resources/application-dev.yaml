@@ -1,7 +1,7 @@
 spring:
   config:
     activate:
-      on-profile: local
+      on-profile: dev
   datasource:
     url: jdbc:mysql://localhost:13306/multi_demo?serverTimeZone=Asia/Seoul&useLegacyDatetimeCode=false&characterEncoding=UTF-8
     username: root
